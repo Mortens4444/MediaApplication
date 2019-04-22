@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{640216D7-1129-4C44-8083-AA788BDD7DC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Media.Extensibility</RootNamespace>
+    <AssemblyName>Media.Extensibility</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DirectShowLib, Version=2.1.0.1599, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DirectShowLib.1.0.0\lib\DirectShowLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Filter\FilterCreator\BaseFilterCreator.cs" />
+    <Compile Include="Filter\FilterCreator\NamedFilterCreator.cs" />
+    <Compile Include="Filter\FilterCreator\TypedFilterCreator.cs" />
+    <Compile Include="Filter\FilterCreator\FilterCreatorBase.cs" />
+    <Compile Include="Filter\FilterType.cs" />
+    <Compile Include="Filter\IFilterRegister.cs" />
+    <Compile Include="Filter\IFilterProvider.cs" />
+    <Compile Include="Filter\IFilterPropertyProvider.cs" />
+    <Compile Include="General\IErrorHandler.cs" />
+    <Compile Include="Media\Connection\ConnectionBase.cs" />
+    <Compile Include="Media\Connection\IConnectionBase.cs" />
+    <Compile Include="Media\Connection\IInConnection.cs" />
+    <Compile Include="Media\Connection\IOutConnection.cs" />
+    <Compile Include="Media\Connection\OutConnection.cs" />
+    <Compile Include="Media\Connection\InConnection.cs" />
+    <Compile Include="Media\Connection\InOutConnection.cs" />
+    <Compile Include="Media\Connection\Ports\IInputPort.cs" />
+    <Compile Include="Media\Connection\Ports\InputPort.cs" />
+    <Compile Include="Media\Connection\Ports\IOutputPort.cs" />
+    <Compile Include="Media\Connection\Ports\OutputPort.cs" />
+    <Compile Include="Media\Connection\Ports\IPortBase.cs" />
+    <Compile Include="Media\Connection\Ports\PortBase.cs" />
+    <Compile Include="Media\IConnectionProvider.cs" />
+    <Compile Include="Media\IGeneralGraphBuilder.cs" />
+    <Compile Include="Media\IConnectedFilterProvider.cs" />
+    <Compile Include="Media\IMediaConnector.cs" />
+    <Compile Include="Media\IMediaEventHandler.cs" />
+    <Compile Include="Media\IPinProvider.cs" />
+    <Compile Include="Media\ISampleGrabberInitializer.cs" />
+    <Compile Include="Media\ITypedGraphBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
