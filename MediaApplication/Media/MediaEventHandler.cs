@@ -53,7 +53,7 @@ namespace MediaApplication.Media
                     {
                         if (ev == EventCode.ErrorAbort)
                         {
-                            Console.WriteLine("An error occured: HRESULT=(0:X}", p1);
+                            Console.WriteLine("An error occurred: HRESULT=(0:X}", p1);
                             typedGraphBuilder.Stop();
                             mediaControl.Stop();
                             stop = true;
